@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense tracker</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Insights Dashboard</h1>
+
+<h2>Total Spending: ₹{{ total }}</h2>
+
+<h3>Category Breakdown</h3>
+<table border="1">
+<tr>
+    <th>Category</th>
+    <th>Total</th>
+</tr>
+
+{% for row in category_data %}
+<tr>
+    <td>{{ row.category }}</td>
+    <td>{{ row.total }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Back</a>
+</body>
+</html>

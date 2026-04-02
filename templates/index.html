@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense tracker</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body><h1>Expense Tracker</h1>
+
+<a href="/add">Add Expense</a> |
+<a href="/dashboard">View Insights</a>
+
+<table border="1">
+<tr>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Category</th>
+    <th>Date</th>
+</tr>
+
+{% for e in expenses %}
+<tr>
+    <td>{{ e.title }}</td>
+    <td>{{ e.amount }}</td>
+    <td>{{ e.category }}</td>
+    <td>{{ e.date }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

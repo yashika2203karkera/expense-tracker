@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense tracker</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+<h1>Add Expense</h1>
+
+<form method="POST">
+    <input name="title" placeholder="Expense Title" required><br><br>
+    <input name="amount" type="number" step="0.01" placeholder="Amount" required><br><br>
+
+    <select name="category">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Education</option>
+        <option>Shopping</option>
+        <option>Other</option>
+    </select><br><br>
+
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
